@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <!-- AS A traveler
+I WANT to see the weather outlook for multiple cities
+SO THAT I can plan a trip accordingly -->
+<div id="teta">
+    <!-- GIVEN a weather dashboard with form inputs
+WHEN I search for a city
+THEN I am presented with current and future conditions for that city and that city is added to the search history
+WHEN I view current weather conditions for that city -->
+    <h1 id="StopUm">Your 5 choices of where you'd love a vacay</h1>
+    <p id="carafaEntrada">Where are we looking today?<input type="text" id="entradaCidade"></p>
+    <button>Search</button>
+    </div>
+    <!-- THEN I am presented with the city name, the date, an icon representation of 
+    weather conditions, the temperature, the humidity, the wind speed, and the UV index -->
+    <h2 id="nomeCidade">Denver</h2>
+    <div id="carafaTempo">
+        <div id="carafaIconicos">
+            <div class="iconicos">
+                <p class="temporada" id="diaUm"></p>
+                <div class="foto"><img src="" class="classFoto" alt="" id="imagem1"></div>
+                <p class="temperatura1">0</p>
+                <p class="humididade1">0</p>
+                <p class="ventura1">0</p>
+                <p class="indiceUltraVioleta1">0</p>
+            </div>
+            <div class="iconicos">
+                <p class="temporada" id="diaDois"></p>
+                <div class="foto"><img src="" class="classFoto" alt="" id="imagem1"></div>
+                <p class="temperatura2">0</p>
+                <p class="humididade2">0</p>
+                <p class="ventura2">0</p>
+                <p class="indiceUltraVioleta2">0</p>
+            </div>
+            <div class="iconicos">
+                <p class="temporada" id="diaTres"></p>
+                <div class="foto"><img src="" class="classFoto" alt="" id="imagem1"></div>
+                <p class="temperatura3">0</p>
+                <p class="humididade3">0</p>
+                <p class="ventura3">0</p>
+                <p class="indiceUltraVioleta3">0</p>
+            </div>
+            <div class="iconicos">
+                <p class="temporada" id="diaQuatro"></p>
+                <div class="foto"><img src="" class="classFoto" alt="" id="imagem1"></div>
+                <p class="temperatura4">0</p>
+                <p class="humididade4">0</p>
+                <p class="ventura4">0</p>
+                <p class="indiceUltraVioleta4">0</p>
+            </div>
+            <div class="iconicos">
+                <p class="temporada" id="diaCinqo"></p>
+                <div class="foto"><img src="" class="classFoto" alt="" id="imagem1"></div>
+                <p class="temperatura5">0</p>
+                <p class="humididade5">0</p>
+                <p class="ventura5">0</p>
+                <p class="indiceUltraVioleta5">0</p>
+            </div>
+           
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+
+</html>
