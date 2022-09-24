@@ -19,14 +19,14 @@ fetch("http://api.openweathermap.org/data/2.5/forecast?q='+nomeFresca.value+'&ap
 
     function getGeo(entradaCidade)
 {
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${entradaCidade}&limit=5&appid=${apiKey}`)
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${nomeFresca}&limit=5&appid=${apiKey}`)
     .then(function(res){
         return res.json();
     })
-    .then(function(odado){
-        console.log(odado[0].lat);
-        var lat = odado[0].lat;
-        var lon = odado[0].lon;
+    .then(function(data){
+        console.log(data[0].lat);
+        var lat = data[0].lat;
+        var lon = data[0].lon;
         getCurrentWeather(lat,lon);
         getForecastWeather(lat,lon);
     })
@@ -59,6 +59,8 @@ function getCurrentWeather(lat,lon)
 
 var apiKey = "92a8d5845e11ed8a7876f7a2f68e8eb4";
 
+// Second to get the lat and lon of a entradaCidade
+
 function getCurrentWeather(lat,lon)
 {
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
@@ -73,10 +75,14 @@ function getCurrentWeather(lat,lon)
     })
 }
 
+// Third to display the data of the forecast
+
 function getForecastWeather(lat,lon)
 {
 
 }
+
+// First to establish the city search
 
 function getGeo(city)
 {
