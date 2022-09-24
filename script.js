@@ -57,6 +57,8 @@ function getCurrentWeather(lat,lon)
     
 })*/
 
+//  
+
 var apiKey = "92a8d5845e11ed8a7876f7a2f68e8eb4";
 
 // Second to get the lat and lon of a entradaCidade
