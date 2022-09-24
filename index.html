@@ -19,21 +19,20 @@ THEN I am presented with current and future conditions for that city and that ci
 WHEN I view current weather conditions for that city -->
     <h1 id="StopUm">Your 5 choices of where you'd love a vacay</h1>
     <p id="carafaEntrada">Where are we looking today?<input type="text" id="entradaCidade"></p>
-    <button onclick="DadosRecuperacao()">Search</button>
+    <button id="cityBtn">Search</button>
     </div>
     <!-- THEN I am presented with the city name, the date, an icon representation of 
     weather conditions, the temperature, the humidity, the wind speed, and the UV index -->
     <h2 id="nomeCidade">Denver</h2>
     <div id="carafaTempo">
         <div id="carafaIconicos">
-            <div class="iconicos">
+            <div class="iconicos" id="current">
                 <p class="temporada" id="dia1"></p>
                 <!-- add source for img -->
                 <div class="foto"><img src="" class="classFoto" alt="" id="imagem1"></div>
                 <p class="temperatura" id="dia1Temperatura">0</p>
                 <p class="humididade" id="dia1Humidade">0</p>
                 <p class="ventura" id="dia1Ventura">0</p>
-                <p class="indiceUltraVioleta" id="dia1IndiceUltraVioleta">0</p>
             </div>
             <div class="iconicos">
                 <p class="temporada" id="dia2"></p>
@@ -42,7 +41,6 @@ WHEN I view current weather conditions for that city -->
                 <p class="temperatura" id="dia2Temperatura">0</p>
                 <p class="humididade" id="dia2Humidade">0</p>
                 <p class="ventura" id="dia2Ventura">0</p>
-                <p class="indiceUltraVioleta" id="dia2IndiceUltraVioleta">0</p>
             </div>
             <div class="iconicos">
                 <p class="temporada" id="dia3"></p>
@@ -51,7 +49,6 @@ WHEN I view current weather conditions for that city -->
                 <p class="temperatura" id="dia3Temperatura">0</p>
                 <p class="humididade" id="dia3Humidade">0</p>
                 <p class="ventura" id="dia3Ventura">0</p>
-                <p class="indiceUltraVioleta" id="dia3IndiceUltraVioleta">0</p>
             </div>
             <div class="iconicos">
                 <p class="temporada" id="dia4"></p>
@@ -60,7 +57,6 @@ WHEN I view current weather conditions for that city -->
                 <p class="temperatura" id="dia4Temperatura">0</p>
                 <p class="humididade" id="dia4Humidade">0</p>
                 <p class="ventura" id="dia4Ventura">0</p>
-                <p class="indiceUltraVioleta" id="dia4IndiceUltraVioleta">0</p>
             </div>
             <div class="iconicos">
                 <p class="temporada" id="dia5"></p>
@@ -69,7 +65,6 @@ WHEN I view current weather conditions for that city -->
                 <p class="temperatura" id="dia5Temperatura">0</p>
                 <p class="humididade" id="dia5Humidade">0</p>
                 <p class="ventura" id="dia5Ventura">0</p>
-                <p class="indiceUltraVioleta" id="dia5IndiceUltraVioleta">0</p>
             </div>
         </div>
     </div>
