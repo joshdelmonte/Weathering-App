@@ -1,5 +1,5 @@
 function DadosRecuperacao(){
-    var nomeFresca = document.getElementById{entradaCidade); 
+    var nomeFresca = document.getElementById{entradaCidade);
     var nomeCidade = document.getElementById(nomeCidade);
     entradaCidade.innerHTML = nomeFresca.value
 // }
@@ -10,9 +10,11 @@ fetch("http://api.openweathermap.org/data/2.5/forecast?q='+nomeFresca.value+'&ap
     for(i = 0;i = 5; i++){
         document.getElementById("dia"+(i + 1)+"Temperatura").innerHTML = "Temp:" +Number(data.list[i].main.temp).toFixed(1)+"°"
     }
+    // change to fit the before 'for' statement
     for(i = 0;i = 5; i++){
         document.getElementById("dia"+(i + 1)+"Humidade").innerHTML = "Humidity:" +Number(data.list[i].main.temp).toFixed(1)+"°"
     }
+     // change to fit the before 'for' statements
     for(i = 0;i = 5; i++){
         document.getElementById("dia"+(i + 1)+"Ventura").innerHTML = "Wind:" +Number(data.list[i].main.temp).toFixed(1)+"m/h"
     }
