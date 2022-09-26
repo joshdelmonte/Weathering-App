@@ -11,16 +11,16 @@ fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + nomeFresca.value +"
 .then(Response => Response.json())
 .then(data =>{
     console.log(data);
-    for(i = 0;i = 5; i++){
-        document.getElementById("dia"+(i + 1)+"Temperatura").innerHTML = "Temp:" +Number(data.list[i].main.temp).toFixed(1)+"°"
+    for(i = 0;i < 5; i++){
+        document.getElementById("dia-"+(i + 1)+"-Temperatura").innerHTML = "Temp:" +Number(data.list[i].main.temp).toFixed(1)+"°"
     }
     // change to fit the before "for" statement
-    for(i = 0;i = 5; i++){
-        document.getElementById("dia"+(i + 1)+"Humidade").innerHTML = "Humidity:" +Number(data.list[i].main.temp).toFixed(1)+"%"
+    for(i = 0;i < 5; i++){
+        document.getElementById("dia-"+(i + 1)+"-Humidade").innerHTML = "Humidity:" +Number(data.list[i].main.temp).toFixed(1)+"%"
     }
      // change to fit the before "for" statements
-    for(i = 0;i = 5; i++){
-        document.getElementById("dia"+(i + 1)+"Ventura").innerHTML = "Wind:" +Number(data.list[i].main.temp).toFixed(1)+"mi/h"
+    for(i = 0;i < 5; i++){
+        document.getElementById("dia-"+(i + 1)+"-Ventura").innerHTML = "Wind:" +Number(data.list[i].main.temp).toFixed(1)+"mi/h"
     }
     // Second to to apply data from the first with lat and lon and continue to to the third for projected forecast
     function getGeo(nomeFresca)
