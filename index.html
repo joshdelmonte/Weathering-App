@@ -4,31 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Weather Dashboard</title>
 </head>
 
 <body>
-    <!-- AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly -->
+    
 <div id="teta">
-    <!-- GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city -->
+   
     <h1 id="StopUm">Your 5 choices of where you'd love a vacay</h1>
-    <p id="carafaEntrada">Where are we looking today?<input type="text" id="entradaCidade"></p>
+    <p id="input-container">Where are we looking today?<input type="text" id="cityinput"></p>
     <button id="cityBtn">Search</button>
     </div>
-    <!-- THEN I am presented with the city name, the date, an icon representation of 
-    weather conditions, the temperature, the humidity, the wind speed, and the UV index -->
-    <h2 id="nomeCidade">Denver</h2>
+    <h2 id="nomeCidade">~5 Day forecast for your city~</h2>
     <div id="carafaTempo">
         <div id="carafaIconicos">
             <div class="iconicos" id="current">
                 <p class="temporada" id="dia-1"></p>
-                <!-- add source for img -->
+                
                 <div class="foto"><img src="" class="classFoto" alt="" id="imagem1"></div>
                 <p class="temperatura" id="dia-1-Temperatura">0</p>
                 <p class="humididade" id="dia-1-Humidade">0</p>
@@ -36,7 +29,7 @@ WHEN I view current weather conditions for that city -->
             </div>
             <div class="iconicos">
                 <p class="temporada" id="dia-2"></p>
-                <!-- add source for img -->
+            
                 <div class="foto"><img src="" class="classFoto" alt="" id="imagem1"></div>
                 <p class="temperatura" id="dia-2-Temperatura">0</p>
                 <p class="humididade" id="dia-2-Humidade">0</p>
@@ -44,7 +37,7 @@ WHEN I view current weather conditions for that city -->
             </div>
             <div class="iconicos">
                 <p class="temporada" id="dia-3"></p>
-                <!-- add source for img -->
+                
                 <div class="foto"><img src="" class="classFoto" alt="" id="imagem1"></div>
                 <p class="temperatura" id="dia-3-Temperatura"></p>
                 <p class="humididade" id="dia-3-Humidade"></p>
@@ -52,7 +45,7 @@ WHEN I view current weather conditions for that city -->
             </div>
             <div class="iconicos">
                 <p class="temporada" id="dia-4"></p>
-                <!-- add source for img -->
+                
                 <div class="foto"><img src="" class="classFoto" alt="" id="imagem1"></div>
                 <p class="temperatura" id="dia-4-Temperatura"></p>
                 <p class="humididade" id="dia-4-Humidade"></p>
@@ -60,7 +53,7 @@ WHEN I view current weather conditions for that city -->
             </div>
             <div class="iconicos">
                 <p class="temporada" id="dia-5"></p>
-                <!-- add source for img -->
+                
                 <div class="foto"><img src="" class="classFoto" alt="" id="imagem1"></div>
                 <p class="temperatura" id="dia-5-Temperatura"></p>
                 <p class="humididade" id="dia-5-Humidade"></p>
@@ -71,7 +64,7 @@ WHEN I view current weather conditions for that city -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 
