@@ -1,21 +1,20 @@
- function DadosRecuperacao() {
-    var newName = document.getElementById('cityinput');
-    var nomeCidade = document.getElementById('nomeCidade');
-    cityinput.innerHTML = newName.value
-}
+var apiRoot = "https://api.openweathermap.org";
+var apiKey = "92a8d5845e11ed8a7876f7a2f68e8eb4";
 
-$("#cityBtn").on("click", () => newName = document.getElementById("cityinput").value);
+
+$("#cityBtn").on("click", () => {
+    newName = document.getElementById("cityinput").value;
+    console.log(newName);
     // Should translate this data to the HTML
-    fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + newName.value + "&appid=92a8d5845e11ed8a7876f7a2f68e8eb4")  /// --> we get back JSON object STRING DATA
+    fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + newName + "&appid=92a8d5845e11ed8a7876f7a2f68e8eb4")  /// --> we get back JSON object STRING DATA
         .then(response => {
-            console.log(response);   // here we can see the PROMISE object
+
             return response.json()
         })  // --> we are parsing the data we get back
         .then(data => {
-            console.log(data);
-            console.log(data.list);
+
             console.log(data.list[0]);
-            console.log(typeof data);
+
 
             var filteredArray = [];
             // loop through our forcast data
@@ -42,15 +41,16 @@ $("#cityBtn").on("click", () => newName = document.getElementById("cityinput").v
             // THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
 
             for (i = 0; i < 6; i++) {
-                document.getElementById("dia-" + (i + 1) + "-Temperatura").innerHTML = "Temp:" + Number(data.list[i].main.temp).toFixed(1) + "°"
+                var temperatureF = (filteredArray[0].main.temp - 273.15) * 9 / 5 + 32;
+                document.getElementById("dia-"+ (i + 1) + "-Temperatura").innerHTML = "Temp: " + temperatureF.toFixed(1) + "°F";
             }
             // change to fit the before "for" statement
             for (i = 0; i < 6; i++) {
-                document.getElementById("dia-" + (i + 1) + "-Humidade").innerHTML = "Humidity:" + Number(data.list[i].main.humidity).toFixed(1) + "%"
+                document.getElementById("dia-"+ (i + 1) + "-Humidade").innerHTML = "Humidity: " + filteredArray[0].main.humidity + "%";
             }
             // change to fit the before "for" statements
             for (i = 0; i < 6; i++) {
-                document.getElementById("dia-" + (i + 1) + "-Ventura").innerHTML = "Wind:" + Number(data.list[i].wind.speed).toFixed(1) + "mi/h"
+                document.getElementById("dia-"+ (i + 1) +"-Ventura").innerHTML = "Wind: " + filteredArray[0].wind.speed + "mi/h";
             }
             // Second to to apply data from the first with lat and lon and continue to to the third for projected forecast
             function getGeo(newName) {
@@ -77,7 +77,9 @@ $("#cityBtn").on("click", () => newName = document.getElementById("cityinput").v
             // This is the function that will get the current weather data
             // It will take in the latitude and longitude of the city   
             {
-                fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+                var apiUrl = `${apiRoot}/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&appid=${apiKey}`;
+
+                fetch(apiUrl)
                     .then(function (resolva) {
                         return resolva.json();
                     })
@@ -89,20 +91,22 @@ $("#cityBtn").on("click", () => newName = document.getElementById("cityinput").v
                     })
                     .then(function (currentHumidity) {
                         console.log("Current Weather Data: " + JSON.stringify(currentHumidity));
-                        var humidP = $("<p>");
-                        humidP.text("humidity: " + currentHumidity.main.humidity);
-                        $("#current").append(humidP);
+                        var humid = $("<p>");
+                        humid.text("humidity: " + currentHumidity.main.humidity);
+                        $("#current").append(humid);
                     })
                     .then(function (currentData) {
                         console.log("Current Weather Data: " + JSON.stringify(currentData));
-                        var windP = $("<p>");
-                        windP.text("wind: " + currentData.wind.speed);
-                        $("#current").append(windP);
+                        var wind = $("<p>");
+                        wind.text("wind: " + currentData.wind.speed);
+                        $("#current").append(wind);
                     })
             }
             //This function will get the forecast weather data for the city
+
             function getForecastWeather(lat, lon) {
-                fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+                var apiUrl = `${apiRoot}/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&appid=${apiKey}`;
+                fetch(apiUrl)
                     .then(function (resolva) {
                         return resolva.json();
                     })
@@ -116,9 +120,9 @@ $("#cityBtn").on("click", () => newName = document.getElementById("cityinput").v
         .catch(err => {
             console.log(err);
         })
+});
 
 
-    
 
 
 // const API_KEY = '92a8d5845e11ed8a7876f7a2f68e8eb4';
