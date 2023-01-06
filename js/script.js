@@ -40,6 +40,14 @@ $("#cityBtn").on("click", () => {
             // WHEN I view current weather conditions for that city
             // THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
 
+            //This will be for the icons for current weather
+            for (var i = 0; i < 5; i++) {
+                var iconCode = filteredArray[i].weather[0].icon;
+                var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+                document.getElementById("dia-"+ (i + 1) + "-Icon").src = iconUrl;
+                console.log(iconUrl)
+            }
+
             for (var i = 0; i < 5; i++) {
                 var temperatureF = (filteredArray[i]?.main.temp - 273.15) * 9 / 5 + 32;
                 document.getElementById("dia-"+ (i + 1) + "-Temperatura").innerHTML = "Temp: " + temperatureF.toFixed(1) + "°F";
