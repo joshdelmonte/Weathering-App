@@ -40,17 +40,19 @@ $("#cityBtn").on("click", () => {
             // WHEN I view current weather conditions for that city
             // THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
 
-            for (i = 0; i < 6; i++) {
-                var temperatureF = (filteredArray[0].main.temp - 273.15) * 9 / 5 + 32;
+            for (var i = 0; i < 5; i++) {
+                var temperatureF = (filteredArray[i]?.main.temp - 273.15) * 9 / 5 + 32;
                 document.getElementById("dia-"+ (i + 1) + "-Temperatura").innerHTML = "Temp: " + temperatureF.toFixed(1) + "°F";
+                console.log(temperatureF)
             }
             // change to fit the before "for" statement
-            for (i = 0; i < 6; i++) {
-                document.getElementById("dia-"+ (i + 1) + "-Humidade").innerHTML = "Humidity: " + filteredArray[0].main.humidity + "%";
+            for (var i = 0; i < 5; i++) {
+                document.getElementById("dia-"+ (i + 1) + "-Humidade").innerHTML = "Humidity: " + filteredArray[i].main.humidity + "%";
+                console.log(filteredArray[i].main.humidity)
             }
             // change to fit the before "for" statements
-            for (i = 0; i < 6; i++) {
-                document.getElementById("dia-"+ (i + 1) +"-Ventura").innerHTML = "Wind: " + filteredArray[0].wind.speed + "mi/h";
+            for (var i = 0; i < 5; i++) {
+                document.getElementById("dia-"+ (i + 1) +"-Ventura").innerHTML = "Wind: " + filteredArray[i].wind.speed + "mi/h";
             }
             // Second to to apply data from the first with lat and lon and continue to to the third for projected forecast
             function getGeo(newName) {
